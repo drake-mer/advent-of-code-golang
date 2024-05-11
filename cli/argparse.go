@@ -16,5 +16,6 @@ func CliHello() {
 	default_day := now.Day()
 	flag.IntVar(&YEAR, "y", default_year, "The year of the exercise")
 	flag.IntVar(&DAY, "d", default_day, "The day of the exercise")
+	flag.Parse()
 	fmt.Printf("Day %d, Year %d\n", DAY, YEAR)
 }
