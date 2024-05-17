@@ -8,12 +8,17 @@ import (
 
 func RunDay(day int){
 	fmt.Printf("day %d\n", day)
-	data := cli.DownloadInput(day, 2019) 
+	data := cli.GetInputWithCaching(day, 2019)
+	var part1 int = 0
+	var part2 int = 0
 	switch day {
 	case 1:
-		day1(data)
-
+		part1, part2 = day01(data)
+	case 2:
+		part1, part2 = day02(data)
 	default:
 		panic("not implemented")
 	}
+
+	fmt.Printf("part1: %d\npart2: %d\n", part1, part2)
 }
