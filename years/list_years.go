@@ -7,10 +7,10 @@ import (
 )
 
 
-func RunProgram(year int, day int) {
+func RunProgram(year int, day int, download bool) {
 	switch year {
 	case 2019:
-		year_2019.RunDay(day)
+		year_2019.RunDay(day, download)
 	case 2020:
 		panic("not implemented")
 	case 2021:

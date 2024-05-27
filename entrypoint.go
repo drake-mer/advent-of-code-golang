@@ -8,5 +8,5 @@ import (
 
 func main() {
 	cli.CliHello()
-	years.RunProgram(cli.YEAR, cli.DAY)
+	years.RunProgram(cli.YEAR, cli.DAY, cli.DOWNLOAD)
 }

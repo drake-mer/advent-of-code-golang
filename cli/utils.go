@@ -60,11 +60,13 @@ func SaveFileContent(filepath string, filecontent []string) (err error) {
 	return nil
 }
 
-func GetInputWithCaching(day int, year int) (data []string) {
+func GetInputWithCaching(day int, year int, download bool) (data []string) {
 	filename := path.Join(GetOrCreateCacheDir(year), fmt.Sprintf("input_day%02d.txt", day))
 	file_content, err := GetFileContent(filename)
-	if err != nil {
-		fmt.Printf("could not fetch content from filesystem: %s\n", err)
+	if download || err != nil {
+		if err != nil {
+			fmt.Printf("could not fetch content from filesystem: %s\n", err)
+		}
 		input_strings := DownloadInput(day, year)
 		fmt.Printf("saving the content on %s\n", filename)
 		err := SaveFileContent(filename, input_strings)
