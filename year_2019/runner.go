@@ -18,6 +18,8 @@ func RunDay(day int, download bool){
 		part1, part2 = day02(data)
 	case 3:
 		part1, part2 = day03(data)
+	case 4:
+		part1, part2 = day04(data)
 	default:
 		panic("not implemented")
 	}
